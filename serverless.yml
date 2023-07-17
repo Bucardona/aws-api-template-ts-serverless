@@ -1,0 +1,16 @@
+service: aws-api-login
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: src/index.getIndex
+    events:
+      - httpApi: GET /
+
+plugins:
+  - serverless-offline
+  - serverless-esbuild
