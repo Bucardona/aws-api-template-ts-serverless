@@ -1,4 +1,4 @@
-service: aws-api-login
+service: api-template-${sls:stage}
 frameworkVersion: '3'
 
 provider:
@@ -6,8 +6,8 @@ provider:
   runtime: nodejs18.x
 
 functions:
-  api:
-    handler: src/index.getIndex
+  getMethod:
+    handler: src/getMethod.handler
     events:
       - httpApi: GET /
 
