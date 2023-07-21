@@ -4,12 +4,13 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs18.x
+  region: us-east-1
 
 functions:
   getMethod:
     handler: src/getMethod.handler
     events:
-      - httpApi: GET /
+      - httpApi: GET /examples
 
 plugins:
   - serverless-offline
